@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网站列表</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            /**background-color: #fff;**/
+           /** color: #fff; **/
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+           background-color: #fff; 
+            border-radius: 5px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 45px 0; /* 增加下一个列表项与上一个下划线的距离 */
+            padding: 10px 0;
+            position: relative; /* 用于定位下划线伪元素 */
+            display: flex; /* 使链接和描述垂直排列 */
+            flex-direction: column; /* 垂直排列 */
+            align-items: center; /* 居中对齐 */
+        }
+
+        li::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #ccc;
+            transition: background-color 0.3s; /* 添加过渡效果 */
+        }
+
+        li:hover::before {
+            background-color: #007bff; /* 鼠标悬停时的动效颜色 */
+        }
+
+        li a {
+            text-decoration: none;
+            color: #007bff;
+           /** font-size: 25px; /* 增大字体大小 */ **/
+        }
+
+        li a:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+
+        .description {
+            text-align: center;
+            margin-top: 10px; /* 略微增加描述与链接的距离 */
+        }
+        .name{
+        font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>网站列表</h1>
+    </header>
+    <main>
+        <ul id="website-list">
+            <!-- 网站列表项将在JavaScript中生成 -->
+        </ul>
+    </main>
+    <script>
+        // 假设您有一个网站数据数组，每个网站对象包含名称、链接和描述
+        const websites = [
+            { name: "函数图像绘制", url: "./math", description: "根据你的输入绘制各种数学函数图像" },
+            { name: "Website 2", url: "#", description: "This is the description for Website 2" },
+            { name: "Website 3", url: "#", description: "This is the description for Website 3" }
+        ];
+
+        // 获取UL元素
+        const websiteList = document.getElementById("website-list");
+
+        // 生成网站列表
+        websites.forEach(website => {
+            const li = document.createElement("li");
+            li.innerHTML = `<a class="name" href="${website.url}" target="_blank">${website.name}</a>`;
+            const description = document.createElement("p");
+            description.className = "description";
+            //description.innerText = website.description;
+            description.innerHTML = `<a href="${website.url}" target="_blank">${website.description}</a>`;
+            li.appendChild(description);
+            websiteList.appendChild(li);
+        });
+    </script>
+</body>
+</html>
