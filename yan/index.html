@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <style>
+   body {
+            background-color:#f0f0f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        a {
+        text-decoration: none;
+        color: #007bff;
+        margin: 0 10px;
+       }
+        footer{
+        text-align:center;
+        font-size: 25px;
+        font-style: italic;
+        color: #777; /* 更浅的文本颜色 */
+    }
+        /**hr{
+        border:1px solid grey;
+        }**/
+        .content {
+            padding:40px;
+            text-align: center;
+            font-size: 45px; /* 调整字体大小 */
+        }
+        .source {
+            font-size: 30px; /* 出处和作者字体略小 */
+        }
+   </style>
+</head>
+<body>
+    <div class="content">
+        <p id="hitokoto_text">获取中......</p>         
+          <div class="source">
+            <hr \>
+            <p id="from_text"></p>
+        </div>
+    </div>
+    <footer>
+            <p>&copy; 2023<a href="//www.oops.cyou"> starryflow. </a>All rights reserved.</p>
+            <p>Thanks for <a href ="//hitokoto.cn">Hitokoto.</p>
+        </footer>
+</body>
+    <script src="index.js"></script>
+</html>
