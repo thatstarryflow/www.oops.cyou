@@ -2,7 +2,7 @@ const APIURL = 'https://v1.hitokoto.cn?c=d&e&f&g&h&i&j&k=c'
 const hitokoto = document.querySelector('#hitokoto_text')
 const from = document.querySelector('#from_text')
 
-setTimeout(() => getText(), 800);
+setTimeout(() => getText(), 700);
 
 function getButton(){
 hitokoto.innerText =  "获取中......"
